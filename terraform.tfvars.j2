@@ -1,0 +1,32 @@
+resource_vars = {
+  appname     = "{{ resource_vars.appname }}"
+  region      = "{{ resource_vars.region }}"
+  attributes  = [{% for attribute in resource_vars.attributes %}"{{ attribute }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+  environment = "{{ resource_vars.environment }}"
+  label_order = [{% for label in resource_vars.label_order %}"{{ label }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+}
+
+default_tags = {
+  Application        = "{{ default_tags.Application }}"
+  Consumer           = "{{ default_tags.Consumer }}"
+  Environment        = "{{ default_tags.Environment }}"
+  DataClassification = "{{ default_tags.DataClassification }}"
+  Service            = "{{ default_tags.Service }}"
+}
+
+stage           = "{{ stage }}"
+domain          = "{{ domain }}"
+account_no      = "{{ account_no }}"
+deployment_role = "{{ deployment_role }}"
+region          = "{{ region }}"
+
+vpc_id     = "{{ vpc_id }}"
+subnet_ids = [{% for subnet in subnet_ids %}"{{ subnet }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+
+ecr_repo      = "{{ ecr_repo }}"
+image_version = "{{ image_version }}"
+version       = "{{ version }}"
+
+image_config_command           = [{% for command in image_config_command %}"{{ command }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+image_config_entrypoint        = [{% for entrypoint in image_config_entrypoint %}"{{ entrypoint }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+image_config_working_directory = "{{ image_config_working_directory }}"

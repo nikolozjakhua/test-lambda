@@ -1,0 +1,4 @@
+[project]
+name = "blabla"
+version = "1.0.0"
+description = "tomlfile for testing"

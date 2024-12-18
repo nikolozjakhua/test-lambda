@@ -1,0 +1,36 @@
+account_no: '715841339388'
+backend:
+  bucket: digw-terraform-backend
+  dynamodb_table: digw-terraform-lock
+  encrypt: true
+  key: ivashkev
+  region: us-east-1
+default_tags:
+  Application: digw
+  Consumer: digw-developers@merck.com
+  DataClassification: Proprietary
+  Environment: Development
+  Service: digw-development
+deployment_role: digw-dev-admin-role
+domain: digw
+ecr_repo: my-ecr-repo
+image_config_command: []
+image_config_entrypoint: []
+image_config_working_directory: ''
+region: us-east-1
+resource_vars:
+  appname: digw
+  attributes:
+  - lambda
+  - backend
+  environment: dev
+  label_order:
+  - appname
+  - environment
+  region: us-east-1
+stage: dev
+subnet_ids:
+- subnet-0123456789abcdef0
+- subnet-0fedcba9876543210
+version: 1.0.0
+vpc_id: vpc-0abcd1234efgh5678
